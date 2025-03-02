@@ -6,15 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Web to Lead Form</title>
     <link rel = "stylesheet" href = "style.css">
-    <script src = "script.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script src = "script.js"></script>   
+
 </head>
 <body>
     <h1>Create Lead</h1>
     <form action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00DWU00000JSnR4" method="POST" onsubmit = "beforeSubmit()">
     
     <input type=hidden name="oid" value="00DWU00000JSnR4">
-    <input type=hidden name="retURL" value="">
-    
+    <input type=hidden name="retURL" value="https://ashutospattnaik.github.io/Web-to-Lead-Project/thanks.html">
+    <input type=hidden name='captcha_settings' value='{"keyname":"WebToLead","fallback":"true","orgId":"00DWU00000JSnR4","ts":""}'>
+    <input type=hidden name="Lead_Date__c" class = "outputDt">
     
     <label for="first_name">First Name</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" required = "true"/><br>
     
@@ -25,7 +28,8 @@
     <label for="lead_date">Lead Date</label><input  id="lead_date" maxlength="80" name="laed_date" size="20" type="date" required = "true" class = "inputDt"/><br>
     
     <!--Lead Date:<span class="dateInput dateOnlyInput"><input  id="00NWU00000GJ8a9" name="00NWU00000GJ8a9" size="12" type="text" /></span><br>-->
-    <input type=hidden name="Lead_Date__c" class = "outputDt">
+    
+    <div class="g-recaptcha" data-sitekey="6LdzeecqAAAAANihFzWAc5dPkb08aIfG9Pbiwf5r"></div><br>
     <input type="submit" name="submit"class = "submit">
     
     </form>
